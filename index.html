@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ChainCacao | L'Excellence du Terroir Numérique</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS (includes Tailwind) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary/10 selection:text-primary">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[100] bg-background/80 backdrop-blur-xl border-b border-black/5">
+        <div class="flex justify-between items-center px-6 md:px-12 py-3 md:py-5 max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.href='#home'">
+                <img src="Logo.png" alt="ChainCacao Logo"
+                    class="h-12 md:h-16 w-auto object-contain transform group-hover:scale-105 transition-transform duration-500">
+                <span
+                    class="text-xl md:text-2xl font-extrabold text-primary tracking-tighter font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-tertiary">ChainCacao</span>
+            </div>
+            <div class="hidden lg:flex items-center justify-end flex-1">
+                <div class="flex gap-4 items-center">
+                    <a class="nav-link active" href="#home">
+                        <i class="material-symbols-outlined">home</i>
+                        <span>Accueil</span>
+                    </a>
+                    <a class="nav-link" href="#problem">
+                        <i class="material-symbols-outlined">warning</i>
+                        <span>Le Problème</span>
+                    </a>
+                    <a class="nav-link" href="#solution">
+                        <i class="material-symbols-outlined">settings_suggest</i>
+                        <span>Notre Solution</span>
+                    </a>
+                    <a class="nav-link" href="#impact">
+                        <i class="material-symbols-outlined">eco</i>
+                        <span>Impact ODD</span>
+                    </a>
+                    <a class="nav-link" href="#contact">
+                        <i class="material-symbols-outlined">mail</i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden flex items-center p-2 text-primary hover:bg-primary/5 rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[110] bg-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col shadow-2xl">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-black/5 bg-white">
+                <div class="flex items-center gap-2">
+                    <img src="Logo.png" alt="ChainCacao Logo" class="h-8 w-auto object-contain" style="height: 32px !important;">
+                    <span class="text-lg font-extrabold text-primary tracking-tighter font-headline">ChainCacao</span>
+                </div>
+                <button id="close-menu-btn" class="p-2 text-primary hover:bg-primary/5 rounded-xl transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            
+            <div class="flex-1 flex flex-col justify-center px-8 space-y-6 bg-white">
+                <a class="mobile-nav-link flex items-center justify-between p-4 rounded-2xl bg-surface-variant text-primary font-headline font-extrabold text-2xl" href="#home">
+                    <span>Accueil</span>
+                    <i class="material-symbols-outlined text-primary/30">chevron_right</i>
+                </a>
+                <a class="mobile-nav-link flex items-center justify-between p-4 rounded-2xl bg-surface-variant text-primary font-headline font-extrabold text-2xl" href="#problem">
+                    <span>Le Problème</span>
+                    <i class="material-symbols-outlined text-primary/30">chevron_right</i>
+                </a>
+                <a class="mobile-nav-link flex items-center justify-between p-4 rounded-2xl bg-surface-variant text-primary font-headline font-extrabold text-2xl" href="#solution">
+                    <span>Notre Solution</span>
+                    <i class="material-symbols-outlined text-primary/30">chevron_right</i>
+                </a>
+                <a class="mobile-nav-link flex items-center justify-between p-4 rounded-2xl bg-surface-variant text-primary font-headline font-extrabold text-2xl" href="#impact">
+                    <span>Impact ODD</span>
+                    <i class="material-symbols-outlined text-primary/30">chevron_right</i>
+                </a>
+                <a class="mobile-nav-link flex items-center justify-between p-4 rounded-2xl bg-surface-variant text-primary font-headline font-extrabold text-2xl" href="#contact">
+                    <span>Contact</span>
+                    <i class="material-symbols-outlined text-primary/30">chevron_right</i>
+                </a>
+            </div>
+
+            <div class="p-8 border-t border-black/5 bg-white">
+                <button class="w-full bg-primary text-white py-5 rounded-2xl font-headline font-bold text-lg shadow-2xl shadow-primary/20">
+                    Prendre Contact
+                </button>
+                <p class="text-center mt-6 text-xs text-secondary/40 font-bold uppercase tracking-widest">
+                    © 2026 ChainCacao
+                </p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section: Modern Overlap -->
+        <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 relative z-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/5 text-primary font-headline text-[11px] font-bold uppercase tracking-[0.15em] rounded-full mb-8 border border-primary/10">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Blockchain &amp; Traçabilité Certifiée
+                        </div>
+                        <h1
+                            class="text-6xl md:text-[5.5rem] font-headline font-extrabold text-primary leading-[0.95] tracking-tighter mb-8 text-balance">
+                            Sécuriser l'or brun <span class="text-tertiary">du Togo.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-secondary max-w-lg leading-relaxed mb-10 opacity-80">
+                            Face aux exigences de l'EUDR, nous protégeons l'avenir de 40 000 familles productrices en
+                            garantissant une traçabilité immuable du champ à l'export.
+                        </p>
+                        <div class="flex flex-wrap gap-5">
+                            <button onclick="window.location.href='#solution'"
+                                class="bg-primary text-white px-10 py-5 rounded-full font-headline font-bold text-lg shadow-2xl shadow-primary/20 hover:bg-black transition-all flex items-center gap-3">
+                                Découvrir le Projet
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative group">
+                            <!-- Main Image -->
+                            <div
+                                class="aspect-[4/5] rounded-[2rem] overflow-hidden premium-shadow transform rotate-1 group-hover:rotate-0 transition-transform duration-700">
+                                <img class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+                                    alt="Macro close-up of a raw cocoa bean split open, merging seamlessly into a digital glowing QR code matrix"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYX-tLKLzyekXdkzXU2sfOMNdNPnjhrmvVcCo69Ko1Y7AGKAbdyexrbPLpqka3vnao9HjRN2iESw7dRBD6c3YWuBQ5GLxeZ4FVzClqx0uVh4S85cTPY3gY58h8EyfOfTDVV45NIH5U4VCu882cZkSeuLlC5sWG3cu32GJydz5aW0XRf3qFRu-7Mhel9xkvGphtWJlOQDUxRj_70esp3IgqSCL8tAIypvobfi_5p8Lr37LTI2NEAgPTFyEZ6LpgdSmlLKBmOqo3LkQp" />
+                            </div>
+                            <!-- Floating Tech Element -->
+                            <div
+                                class="absolute -bottom-10 -left-10 glass-card p-8 rounded-2xl premium-shadow max-w-[280px] hidden xl:block">
+                                <div class="flex items-start gap-4 mb-6">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white shrink-0">
+                                        <span class="material-symbols-outlined">qr_code_scanner</span>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="text-[10px] font-bold uppercase tracking-widest text-secondary opacity-60 mb-1">
+                                            Blockchain Hash</div>
+                                        <div class="text-[11px] font-mono truncate text-primary">0x71C765...D8976</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="h-1 w-full bg-primary/10 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary w-3/4"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[11px] font-bold text-primary">Provenance Certifiée</span>
+                                        <span class="text-[11px] font-bold text-tertiary">98.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Abstract BG Decoration -->
+            <div class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+        </section>
+        <!-- Le Défi: Editorial Bento -->
+        <section id="problem" class="py-24 bg-surface-variant/30">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div class="max-w-2xl">
+                        <span
+                            class="text-tertiary font-headline font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Le
+                            Défi Critique</span>
+                        <h2
+                            class="text-5xl md:text-6xl font-headline font-extrabold text-primary tracking-tighter leading-tight">
+                            L'urgence EUDR 2025</h2>
+                    </div>
+                    <p class="text-secondary/70 text-lg max-w-sm">Une transformation nécessaire pour l'accès aux marchés
+                        mondiaux.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Large Card -->
+                    <div
+                        class="md:col-span-8 bg-white rounded-3xl p-10 md:p-16 premium-shadow flex flex-col justify-between overflow-hidden relative">
+                        <div class="relative z-10 max-w-md">
+                            <h3 class="text-3xl font-headline font-extrabold text-primary mb-6">Un impératif européen
+                            </h3>
+                            <p class="text-secondary leading-relaxed text-lg opacity-80">
+                                Dès 2025, le Règlement de l'UE contre la déforestation (EUDR) impose une traçabilité
+                                stricte. Sans preuve numérique, l'accès au marché européen sera interdit.
+                            </p>
+                        </div>
+                        <div class="relative z-10 mt-16 flex items-end gap-6">
+                            <div class="text-8xl font-headline font-extrabold text-primary tracking-tighter">40k<span
+                                    class="text-tertiary">+</span></div>
+                            <div class="mb-4">
+                                <div class="text-sm font-bold text-primary uppercase tracking-widest">Familles</div>
+                                <div class="text-sm text-secondary">à protéger au Togo</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+                            <svg class="h-full w-full" viewbox="0 0 100 100">
+                                <path d="M0 0 L100 100 M100 0 L0 100" stroke="currentColor" stroke-width="0.1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Stats Vertical -->
+                    <div class="md:col-span-4 space-y-6">
+                        <div
+                            class="bg-primary rounded-3xl p-10 text-white flex flex-col justify-between aspect-square md:aspect-auto">
+                            <div class="text-7xl font-headline font-extrabold tracking-tighter mb-4">25%</div>
+                            <div>
+                                <div class="text-xl font-headline font-bold mb-2">Perte de Valeur</div>
+                                <p class="text-white/60 text-sm">Par manque de certification directe et traçabilité
+                                    transparente.</p>
+                            </div>
+                        </div>
+                        <div class="bg-tertiary rounded-3xl p-10 text-white flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <span class="material-symbols-outlined text-4xl opacity-50">warning</span>
+                                <div class="text-right">
+                                    <div class="text-4xl font-headline font-extrabold">$40M</div>
+                                    <div class="text-[10px] font-bold uppercase tracking-widest opacity-60">Pertes
+                                        Annuelles</div>
+                                </div>
+                            </div>
+                            <p class="mt-8 text-sm font-medium">Fraude et intermédiaires opaques nuisent à la filière.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Wide Visual -->
+                    <div class="md:col-span-12 rounded-3xl overflow-hidden relative min-h-[400px] group">
+                        <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Lush green cocoa plantation in Togo"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf1k5lrY3gNtfFRLRlFl0z7S-0yB3UOgvf4bYknHXXcHWEGu-fE6Gaxgg_DqgsNHNe8ogxvRLPrCMsIJuJrje1f0Tbj3SioWeMWCkxRI5qLa0Hjp4rq95Y2vbSHkZVJYOTT21wxL21GsgA_KbwcJuIYmrCi2ECNwvszEOBnhKevMimMTxLQf19WNxJWaEADVkejyk6Tb5dPe4PfYtckZNwq5kmahwaqVbkaDSlnT78366hjscfT73uR8JeyHwLWUDea-4Okwk7q64A" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 p-12 w-full flex flex-col md:flex-row justify-between items-end gap-8">
+                            <p class="text-white text-3xl font-headline font-extrabold max-w-xl leading-tight">
+                                Réhabiliter le terroir Togolais sur la scène mondiale par la confiance numérique.
+                            </p>
+                            <button
+                                class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-headline font-bold hover:bg-white hover:text-primary transition-all">
+                                Voir le Rapport
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Notre Solution: Digital Flow -->
+        <section id="solution" class="py-32">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div class="text-center mb-24">
+                    <span class="text-tertiary font-headline font-bold uppercase tracking-[0.2em] text-xs mb-4 block">La
+                        Technologie</span>
+                    <h2 class="text-5xl md:text-6xl font-headline font-extrabold text-primary tracking-tighter mb-6">
+                        ChainCacao : Registre Immuable</h2>
+                    <p class="text-secondary max-w-2xl mx-auto text-lg opacity-70">
+                        Propulsé par Polygon pour garantir rapidité, transparence et durabilité environnementale totale.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="group">
+                        <div class="relative mb-10 overflow-hidden rounded-2xl aspect-video bg-surface-variant">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                alt="GPS collection in field"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8HQ2xHVE150ba71eWY5WqJyV0xGuELiI2aOpvbyH3N_GmPWSitb6XMpOJDGjVgY1MT0K6X6EKNb83vMikNWSFeiRQUJvO-FUC8su7Buh0gCsLHNHzlEmzdrqc4ydDfUMGwk0hv63U917WcDBJk7g0IhUus20ihnfMSQs63XED_5T9Wuu1wrXiuHTFJTsRiA4DVBH6RKj1k5U3QvngPk5fvAS06J8W9pZ6Ie4AQPU5PTxwA4eTMI5MEm-AE8D1kzDCaoYF9lbAHzAY" />
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold text-primary">
+                                GPS ACTIVÉ</div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span
+                                class="text-6xl font-headline font-extrabold text-primary/10 tracking-tighter">01</span>
+                            <div>
+                                <h3 class="text-xl font-headline font-extrabold text-primary mb-3">Collecte Terrain</h3>
+                                <p class="text-secondary leading-relaxed opacity-70">Géoréférencement précis de chaque
+                                    parcelle pour prouver l'absence de déforestation dès la récolte.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="group">
+                        <div class="relative mb-10 overflow-hidden rounded-2xl aspect-video bg-surface-variant">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                alt="Blockchain data visual"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxqZ7mz3wyvOjsN4stDZnJEVgv9PyUjjdt_bOqAQIvCK95hPUfcoY_Z5PuWwclvSqw8nJf3qgghmzI5hCSYDnO8RRueyeUvYNxLD9DhVH825DHcd67pkzduuCZGLp0LhriyCvCAwcXd4Y3SbhNS_W2p5vwNSnoOiMmwF-24yUs7M0vof1iTH3MEAwSd85rdnmLxxnakUAXXJYl41-P9ST6jLbFLa-QVCjGtQIWrQSL8dbSGF6GEGp4kzq4VPA6m8DBO26fRk3SsTUH" />
+                            <div
+                                class="absolute top-4 left-4 bg-primary/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold text-white uppercase">
+                                Ledger Sync</div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span
+                                class="text-6xl font-headline font-extrabold text-primary/10 tracking-tighter">02</span>
+                            <div>
+                                <h3 class="text-xl font-headline font-extrabold text-primary mb-3">Suivi Immuable</h3>
+                                <p class="text-secondary leading-relaxed opacity-70">Chaque transfert de propriété est
+                                    inscrit dans le grand livre numérique, éliminant les intermédiaires opaques.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="group">
+                        <div class="relative mb-10 overflow-hidden rounded-2xl aspect-video bg-surface-variant">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                alt="QR Code on product"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLaW19TaTDy6f4SlalzS8X1hx0ieuVLyfZ1NxL9dVp2k9WMRMr7y1g65SqOlqBrWnXsaUa4ZUFA8yAavJrSNe4snpni-j20zKNHZAW_YpZrSk70T4_bIipYPfKLl-UNItZLiKQIzhpWcN2d5wzYcGOba1AlsEOje71IMyyutUJ0YAKuGgLDNmzKlGuQvUJ9ewxA2tN0Bu8H0wy5_T9gGp4rFX_2kTuwDBFpCZLIMVhiX8RYoZlbu0hantiWZPOfbpEqHBqpAAMj6gC" />
+                            <div
+                                class="absolute top-4 left-4 bg-tertiary/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-bold text-white uppercase">
+                                Vérifié</div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span
+                                class="text-6xl font-headline font-extrabold text-primary/10 tracking-tighter">03</span>
+                            <div>
+                                <h3 class="text-xl font-headline font-extrabold text-primary mb-3">Certification</h3>
+                                <p class="text-secondary leading-relaxed opacity-70">Un QR code unique sur chaque lot
+                                    permet aux acheteurs européens de vérifier la conformité EUDR en un clic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Écosystème: Clean & Trust -->
+        <section class="bg-surface-variant/40 py-32 overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="order-2 lg:order-1 relative">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white p-8 md:p-10 rounded-3xl premium-shadow hover:-translate-y-2 transition-transform duration-500 border border-black/5">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-8">
+                                    <span class="material-symbols-outlined text-3xl">agriculture</span>
+                                </div>
+                                <h4 class="font-headline font-bold text-primary text-xl mb-3">Agriculteurs</h4>
+                                <p class="text-sm text-secondary leading-relaxed opacity-70">Accès facilité aux marchés
+                                    premium et sécurisation des revenus.</p>
+                            </div>
+                            <div
+                                class="bg-white p-8 md:p-10 rounded-3xl premium-shadow hover:-translate-y-2 transition-transform duration-500 border border-black/5 md:mt-12">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-8">
+                                    <span class="material-symbols-outlined text-3xl">local_shipping</span>
+                                </div>
+                                <h4 class="font-headline font-bold text-primary text-xl mb-3">Exportateurs</h4>
+                                <p class="text-sm text-secondary leading-relaxed opacity-70">Automatisation des preuves
+                                    de conformité pour l'exportation.</p>
+                            </div>
+                            <div
+                                class="bg-white p-8 md:p-10 rounded-3xl premium-shadow hover:-translate-y-2 transition-transform duration-500 border border-black/5">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-8">
+                                    <span class="material-symbols-outlined text-3xl">verified_user</span>
+                                </div>
+                                <h4 class="font-headline font-bold text-primary text-xl mb-3">Organismes</h4>
+                                <p class="text-sm text-secondary leading-relaxed opacity-70">Audit simplifié grâce aux
+                                    données temps réel du terrain.</p>
+                            </div>
+                            <div
+                                class="bg-white p-8 md:p-10 rounded-3xl premium-shadow hover:-translate-y-2 transition-transform duration-500 border border-black/5 md:mt-12">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-8">
+                                    <span class="material-symbols-outlined text-3xl">account_balance</span>
+                                </div>
+                                <h4 class="font-headline font-bold text-primary text-xl mb-3">Ministère</h4>
+                                <p class="text-sm text-secondary leading-relaxed opacity-70">Pilotage stratégique de la
+                                    filière cacao nationale.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <span
+                            class="text-tertiary font-headline font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Partenaires
+                            Stratégiques</span>
+                        <h2
+                            class="text-5xl md:text-6xl font-headline font-extrabold text-primary tracking-tighter mb-8 leading-tight">
+                            Un Écosystème Unifié</h2>
+                        <p class="text-xl text-secondary leading-relaxed mb-12 opacity-80">
+                            ChainCacao ne remplace pas les acteurs existants, il les connecte. Notre plateforme sert de
+                            pont de confiance entre le producteur rural et le consommateur global.
+                        </p>
+                        <div class="space-y-8">
+                            <div class="h-px w-full bg-black/10"></div>
+                            <div
+                                class="flex flex-wrap items-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                                <div class="font-headline font-black text-2xl text-primary tracking-tighter italic">TOGO
+                                    AGRI</div>
+                                <div class="font-headline font-black text-2xl text-primary tracking-tighter italic">
+                                    ECOCERT</div>
+                                <div class="font-headline font-black text-2xl text-primary tracking-tighter italic">
+                                    POLYGON</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Impact & ODD: Dashboard Style -->
+        <section id="impact" class="py-32 bg-white">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 border-b border-black/5 pb-12">
+                    <div class="max-w-xl">
+                        <span
+                            class="text-tertiary font-headline font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Responsabilité
+                            Sociale</span>
+                        <h2 class="text-5xl md:text-6xl font-headline font-extrabold text-primary tracking-tighter">
+                            Impact ODD</h2>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-secondary font-medium text-lg max-w-xs ml-auto opacity-70">
+                            Chaque bloc miné contribue à un monde plus juste et durable.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- ODD Card -->
+                    <div
+                        class="bg-[#e5243b]/5 rounded-3xl p-10 border border-[#e5243b]/10 hover:bg-[#e5243b]/10 transition-all group">
+                        <div
+                            class="text-6xl font-headline font-extrabold text-[#e5243b] mb-12 tracking-tighter group-hover:scale-110 transition-transform duration-500 origin-left">
+                            01 &amp; 02</div>
+                        <div>
+                            <h4 class="font-headline font-extrabold text-primary text-xl mb-3">Fin de la Pauvreté</h4>
+                            <p class="text-sm text-secondary leading-relaxed opacity-70">Réduction de l'insécurité
+                                alimentaire par la juste rémunération et l'accès direct.</p>
+                        </div>
+                    </div>
+                    <!-- ODD Card -->
+                    <div
+                        class="bg-[#a21942]/5 rounded-3xl p-10 border border-[#a21942]/10 hover:bg-[#a21942]/10 transition-all group">
+                        <div
+                            class="text-6xl font-headline font-extrabold text-[#a21942] mb-12 tracking-tighter group-hover:scale-110 transition-transform duration-500 origin-left">
+                            08</div>
+                        <div>
+                            <h4 class="font-headline font-extrabold text-primary text-xl mb-3">Travail Décent</h4>
+                            <p class="text-sm text-secondary leading-relaxed opacity-70">Croissance économique inclusive
+                                pour les producteurs ruraux.</p>
+                        </div>
+                    </div>
+                    <!-- ODD Card -->
+                    <div
+                        class="bg-[#bf8b2e]/5 rounded-3xl p-10 border border-[#bf8b2e]/10 hover:bg-[#bf8b2e]/10 transition-all group">
+                        <div
+                            class="text-6xl font-headline font-extrabold text-[#bf8b2e] mb-12 tracking-tighter group-hover:scale-110 transition-transform duration-500 origin-left">
+                            12</div>
+                        <div>
+                            <h4 class="font-headline font-extrabold text-primary text-xl mb-3">Consommation Resp.</h4>
+                            <p class="text-sm text-secondary leading-relaxed opacity-70">Transparence totale sur le
+                                cycle de vie du produit et son empreinte.</p>
+                        </div>
+                    </div>
+                    <!-- ODD Card -->
+                    <div
+                        class="bg-[#4c9f38]/5 rounded-3xl p-10 border border-[#4c9f38]/10 hover:bg-[#4c9f38]/10 transition-all group">
+                        <div
+                            class="text-6xl font-headline font-extrabold text-[#4c9f38] mb-12 tracking-tighter group-hover:scale-110 transition-transform duration-500 origin-left">
+                            15</div>
+                        <div>
+                            <h4 class="font-headline font-extrabold text-primary text-xl mb-3">Vie Terrestre</h4>
+                            <p class="text-sm text-secondary leading-relaxed opacity-70">Lutte active contre la
+                                déforestation et préservation de la biodiversité.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA: Modern High-End -->
+        <section class="pb-32 px-6">
+            <div
+                class="max-w-[1440px] mx-auto bg-primary rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden premium-shadow">
+                <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
+                    <img class="w-full h-full object-cover" alt="Cacao beans pattern"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAqtS8W2aceDjoxHz1bkRQEi1tMx5nFrETFKYPFzrCvNxvSZZMMRWxuWpgCOr8FXLy_yCi8yw28lbJA_Q0Ycz8JNTTj-u8y1CDi-BTL3fCkDOc20vt7mQJwBUaH5Mv5-f_TIy5EPfIX6-orXBSCbubUT83vrGd-4h_45r_rx1FQ3V26SevP7KtAk7biyrHMXhUJNH8ZdQwG2bwjMV2m6EkzOnepAS3dB2UMwqPhYKqvq0AQdud9TtDQTC6dwoWuiprltv6uW-fTwVw" />
+                </div>
+                <div class="relative z-10 space-y-12">
+                    <h2
+                        class="text-5xl md:text-7xl font-headline font-extrabold max-w-4xl mx-auto leading-[1.1] tracking-tighter">
+                        Prêt à valoriser votre production avec la blockchain ?
+                    </h2>
+                    <p class="text-xl text-white/70 max-w-xl mx-auto">Rejoignez le réseau ChainCacao et sécurisez vos
+                        exportations dès aujourd'hui.</p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center pt-6">
+                        <button
+                            class="bg-white text-primary px-12 py-6 rounded-full font-headline font-extrabold text-lg transition-all hover:shadow-2xl hover:scale-105 active:scale-95">Prendre
+                            Contact</button>
+                        <button
+                            class="bg-transparent border border-white/30 backdrop-blur-md text-white px-12 py-6 rounded-full font-headline font-extrabold text-lg transition-all hover:bg-white/10">Devenir
+                            Partenaire</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer id="contact" class="bg-white border-t border-black/5 py-20">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-20">
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="Logo.png" alt="ChainCacao Logo" class="h-12 w-auto object-contain">
+                        <div class="text-3xl font-extrabold text-primary tracking-tighter font-headline">ChainCacao
+                        </div>
+                    </div>
+                    <p class="text-secondary/60 text-lg leading-relaxed max-w-md">L'Excellence du Terroir Numérique.
+                        Nous construisons le futur du cacao durable par la transparence totale et la souveraineté
+                        technologique.</p>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h5 class="font-headline font-bold text-primary mb-8 text-sm uppercase tracking-widest border-b border-primary/10 pb-2 inline-block">Navigation Rapide</h5>
+                        <ul class="space-y-4">
+                            <li><a class="flex items-center gap-2 text-secondary/60 hover:text-primary transition-all group" href="#home">
+                                <span class="w-1.5 h-1.5 bg-primary/20 rounded-full group-hover:w-4 transition-all"></span>
+                                Le Projet
+                            </a></li>
+                            <li><a class="flex items-center gap-2 text-secondary/60 hover:text-primary transition-all group" href="#solution">
+                                <span class="w-1.5 h-1.5 bg-primary/20 rounded-full group-hover:w-4 transition-all"></span>
+                                Technologie
+                            </a></li>
+                            <li><a class="flex items-center gap-2 text-secondary/60 hover:text-primary transition-all group" href="#impact">
+                                <span class="w-1.5 h-1.5 bg-primary/20 rounded-full group-hover:w-4 transition-all"></span>
+                                Impact ODD
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-headline font-bold text-primary mb-8 text-sm uppercase tracking-widest border-b border-primary/10 pb-2 inline-block">Rejoindre l'aventure</h5>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:-translate-y-1.5 transition-all duration-300 shadow-sm" title="LinkedIn">
+                                <span class="material-symbols-outlined">share</span>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:-translate-y-1.5 transition-all duration-300 shadow-sm" title="Twitter">
+                                <span class="material-symbols-outlined">public</span>
+                            </a>
+                            <a href="mailto:contact@chaincacao.tg" class="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:-translate-y-1.5 transition-all duration-300 shadow-sm" title="Email">
+                                <span class="material-symbols-outlined">mail</span>
+                            </a>
+                        </div>
+                        <p class="mt-6 text-sm text-secondary/50 italic leading-relaxed">Suivez nos avancées et participez à la transformation du cacao togolais.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-secondary/40">© 2026 ChainCacao — Excellence du Terroir Numérique</p>
+                <div class="flex items-center gap-8">
+                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Construit par L'équipe
+                        TG-26</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
