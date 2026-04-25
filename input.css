@@ -94,3 +94,13 @@ html {
 .reveal.active {
     animation: fadeInUp 0.8s ease-out forwards;
 }
+
+/* APP SHOWCASE STYLES */
+.phone-gallery-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.phone-gallery-scroll::-webkit-scrollbar {
+    display: none;
+}
